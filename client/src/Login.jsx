@@ -1,3 +1,3 @@
-export const Login = () => {
+export const Login = (props) => {
     <p> Login </p>
 }
