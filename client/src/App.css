@@ -1,6 +1,6 @@
 .App {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: white;
@@ -8,14 +8,14 @@
 
 .signup-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
-
+    /* padding: 100px 25px; */
+    gap: 50px;
 }
 
-.signup-description {
+.signup-form .signup-header {
     flex: 50%;
-
 }
 
 .logo {
@@ -31,18 +31,17 @@
 }
 
 .description {
-    display: flex;
-    width: 704px;
-    justify-content: space-between;
+    /* width: 704px; */
+    /* justify-content: space-between; */
     align-items: center;
-    margin: 519px 597px 217px 139px;
-    
+    margin:  50px 25px;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 100px 25px;
 }
 
 .signup-header {
@@ -50,6 +49,8 @@
     font-family: Inter;
     font-size: 40px;
     font-weight: 400;
+    align-items: center;
+    text-align: center;
 }
 
 label {
@@ -62,11 +63,9 @@ label {
 }
 
 input {
-    width: 325px;
-    height: 83px;
+    width: 200px;
+    height: 35px;
     margin: 8px 0;
-    padding: 16px; 
-    border: none;
     border-radius: 10px;
     background: #F8F8F8;
 }
@@ -74,7 +73,7 @@ input {
 input::placeholder {
     color: #000;
     font-family: Inter;
-    font-size: 24px;
+    font-size: 12px;
     font-style: italic;
     font-weight: 400;
     opacity: 0.5;

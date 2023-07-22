@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-export const Signup = (props) => {
+export const Signup = () => {
     const [username, setUserName] = useState('');
     const [pass, setPass] = useState('');
     const [email, setEmail] = useState('');
@@ -13,7 +13,7 @@ export const Signup = (props) => {
     return (
         <div className = "signup-container">
             <div className = "signup-description">
-                <img src=".\logo-onecompass.svg" alt="Logo" className="logo"> </img>
+                {/* <img src="./assets/logo-onecompass.svg" alt="Logo" className="logo"> </img> */}
                 <p className="webName">ONECOMPASS</p>
                 <p className='description'> "Once upon a time, there was a lovely web named OneCompass. It offered a personalized roadmap, tracking progress and efficient course planning. It empowered students to make informed decisions and stay on track for timely degree completion. Say goodbye to confusing course planning, join the adventure, and let OneCompass guide you to academic excellence!" </p>
             </div>
@@ -58,7 +58,7 @@ export const Signup = (props) => {
                 </div>
                 <button type="submit"> Sign up</button>
                 <p className="switch-page"> 
-                    Have an account already? <a onClick={() => props.onFormSwitch('login')} href="./src/Login.jsx">Login</a>
+                    Have an account already? <a href="./src/Login.jsx">Login</a>
                 </p>
             </form>
         </div>
