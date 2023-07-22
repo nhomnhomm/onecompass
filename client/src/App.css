@@ -1,0 +1,99 @@
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.signup-description {
+    flex: 50%;
+
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.webName {
+    color: black;
+    font-family: Lexend Giga;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.description {
+    display: flex;
+    width: 704px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 519px 597px 217px 139px;
+    
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.signup-header {
+    color: #000;
+    font-family: Inter;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+label {
+    text-align: left;
+    padding: 8px;
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+input {
+    width: 325px;
+    height: 83px;
+    margin: 8px 0;
+    padding: 16px; 
+    border-radius: 10px;
+    background: #F8F8F8;
+}
+
+input::placeholder {
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    opacity: 0.5;
+}
+
+button {
+    width: 148px;
+    height: 54px;
+    border-radius: 10px;
+    background: #F3B144;
+    color: #161C47;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.switch-page {
+    color: #000;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+}
