@@ -1,18 +1,47 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import userService from '../services/users'
+import loginService from '../services/login'
 
 export const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [user, setUser] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null)
+
+    // see user list
+    useEffect(() => {
+        userService
+          .getAll()
+          .then(response => {
+            console.log(response)
+          })
+      }, [])
 
     let navigate = useNavigate(); 
     const signupLink = () =>{ 
         navigate('signup');
     }
 
-    const handleLogIn = (e) => {
+    const handleLogIn = async (e) => {
         e.preventDefault();
         console.log();
+
+        //
+        try {
+            const user = await loginService.login({
+              username, password,
+            })
+            loginService.setToken(user.token)
+            setUser(user)
+            setUsername('')
+            setPassword('')
+          } catch (exception) {
+            setErrorMessage('Wrong credentials')
+            setTimeout(() => {
+              setErrorMessage(null)
+            }, 5000)
+          }
     }
 
     return (
@@ -43,7 +72,8 @@ export const Login = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}/>
                         </div>
-                        <button className="flex btn-primary mt-4 align-self-end">Log In</button>                            
+                        <button className="flex btn-primary mt-4 align-self-end">Log In</button>   
+                        <p>{errorMessage}</p>                         
                     </form>
                 </div>
             </div>
