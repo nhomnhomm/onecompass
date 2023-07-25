@@ -1,0 +1,13 @@
+@import "../../node_modules/bootstrap/scss/functions"; 
+@import "../../node_modules/bootstrap/scss/variables";
+
+@import './overrides.scss';
+
+@import "../../node_modules/bootstrap/scss/mixins";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "./app_variables.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lexend+Giga:wght@700&display=swap');
+
