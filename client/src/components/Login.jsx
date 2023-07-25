@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import userService from '../services/users'
 import loginService from '../services/login'
 
@@ -9,7 +9,7 @@ export const Login = () => {
     const [user, setUser] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null)
 
-    // see user list
+    // see user list in console.log
     useEffect(() => {
         userService
           .getAll()
@@ -19,8 +19,18 @@ export const Login = () => {
       }, [])
 
     let navigate = useNavigate(); 
+
+    useEffect(() => {
+        if (user) {
+          navigate('/profile')
+        }
+      }, [user])
+
     const signupLink = () =>{ 
         navigate('signup');
+    }
+    const forgotPasswordLink = () => {
+        navigate('forgotpassword')
     }
 
     const handleLogIn = async (e) => {
@@ -32,7 +42,6 @@ export const Login = () => {
             const user = await loginService.login({
               username, password,
             })
-            loginService.setToken(user.token)
             setUser(user)
             setUsername('')
             setPassword('')
@@ -48,6 +57,7 @@ export const Login = () => {
         <div className="container">
             <div className="row">
                 <div className="col-8 justify-content-center align-self-center">
+                <p className="webName text-center">ONECOMPASS</p>   
                 Once upon a time, there was a lovely web named OneCompass. 
                 It offered a personalized roadmap, tracking progress and efficient course planning. 
                 It empowered students to make informed decisions and stay on track for timely degree completion. 
@@ -74,6 +84,7 @@ export const Login = () => {
                         </div>
                         <button className="flex btn-primary mt-4 align-self-end">Log In</button>   
                         <p>{errorMessage}</p>                         
+                        <button className="text-secondary border-0" onClick = {forgotPasswordLink}>Forgot password?</button>
                     </form>
                 </div>
             </div>
