@@ -1,9 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import './App.scss';
 
 import { Signup } from './components/Signup';
 import { Login } from './components/Login';
+import { ForgotPassword } from './components/ForgotPassword'
+import { Profile } from './components/Profile'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
 
         <Routes>
           <Route exact path="/" Component={Login} />
+          <Route exact path="/profile" Component={Profile} />
+          <Route exact path="/forgotpassword" Component={ForgotPassword} />
           <Route exact path="/signup" Component={Signup} />
         </Routes>
       </Router>
