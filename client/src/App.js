@@ -1,11 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 
 import { Signup } from './components/Signup';
 import { Login } from './components/Login';
 import { ForgotPassword } from './components/ForgotPassword'
 import { Profile } from './components/Profile'
+import { MajorMinor } from './components/MajorMinor';
 
 function App() {
   return (

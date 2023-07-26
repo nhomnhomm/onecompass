@@ -27,10 +27,10 @@ export const Login = () => {
   }, [user])
 
   const signupLink = () =>{ 
-    navigate('signup');
+    navigate('/signup');
   }
   const forgotPasswordLink = () => {
-    navigate('forgotpassword')
+    navigate('/forgotpassword')
   }
 
   const handleLogIn = async (e) => {

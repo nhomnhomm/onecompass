@@ -6,6 +6,7 @@ const logger = require('./utils/logger')
 const mongoose = require('mongoose')
 const User = require('./models/user')
 
+const signupRouter = require('./controllers/signup')
 const loginRouter = require('./controllers/login')
 const usersRouter = require('./controllers/users')
 const middleware = require('./utils/middleware')
@@ -26,8 +27,10 @@ app.use(express.json())
 app.use(middleware.requestLogger)
 
 // const user1 = new User({
-//   username: 'random', 
-//   passwordHash: 'random'
+//   username: 'khuetu',
+//   passwordHash: '$2b$10$cSBOKtk4sja2jZa/2KEe5OEQmdsMy1S1SQtyuS0vd4y7Qv.OS97zW',
+//   email: 'khuetu@randomgmail.com',
+//   cohort: '2025',
 // })
 
 // user1.save().then(result => {
@@ -35,6 +38,7 @@ app.use(middleware.requestLogger)
 //   mongoose.connection.close()
 // })
 
+app.use('/api/signup', signupRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/users', usersRouter)
 
