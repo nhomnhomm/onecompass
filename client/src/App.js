@@ -23,6 +23,7 @@ function App() {
           <Route exact path="/profile" Component={Profile} />
           <Route exact path="/forgotpassword" Component={ForgotPassword} />
           <Route exact path="/signup" Component={Signup} />
+          <Route exact path="/majorminor" Component={MajorMinor} />
         </Routes>
       </Router>
     </div>
