@@ -3,8 +3,16 @@ const baseUrl = 'http://localhost:3001/api/users'
 
 let token = null
 
+const getConfig = () => ({
+  headers: { Authorization: token }
+})
+
 const setToken = newToken => {
-  token = `Bearer ${newToken}`
+  token = `bearer ${newToken}`
+}
+
+const destroyToken = () => {
+  token = null
 }
 
 const getAll = () => {
@@ -12,15 +20,16 @@ const getAll = () => {
   return request.then(response => response.data)
 }
 
-const create = newObject => {
-  const request = axios.post(baseUrl, newObject)
-  return request.then(response => response.data)
-}
+// này như signup?
+// const create = newObject => {
+//   const request = axios.post(baseUrl, newObject)
+//   return request.then(response => response.data)
+// }
 
 const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject)
+  const request = axios.put(`${baseUrl}/${id}`, newObject, getConfig())
   return request.then(response => response.data)
 }
 
 
-export default { getAll, create, update, setToken }
+export default { getAll, update, setToken, destroyToken }

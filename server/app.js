@@ -1,10 +1,12 @@
 const config = require('./utils/config')
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 const cors = require('cors')
 const logger = require('./utils/logger')
 const mongoose = require('mongoose')
-const User = require('./models/user')
+
+const { tokenExtractor, errorHandler } = require('./utils/middleware')
 
 const signupRouter = require('./controllers/signup')
 const loginRouter = require('./controllers/login')
@@ -23,7 +25,7 @@ mongoose.connect(config.MONGODB_URI)
   })
 
 app.use(cors())
-app.use(express.json())
+app.use(bodyParser.json())
 app.use(middleware.requestLogger)
 
 // const user1 = new User({
@@ -37,6 +39,8 @@ app.use(middleware.requestLogger)
 //   console.log('user saved!')
 //   mongoose.connection.close()
 // })
+
+app.use(tokenExtractor)
 
 app.use('/api/signup', signupRouter)
 app.use('/api/login', loginRouter)

@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const loginRouter = require('express').Router()
 const User = require('../models/user')
 
+// Login handles using username and password, may consider using email?
 loginRouter.post('/', async (request, response) => {
   const { username, password } = request.body
 
@@ -31,27 +32,6 @@ loginRouter.post('/', async (request, response) => {
   response
     .status(200)
     .send({ token, username: user.username })
-})
-
-function authenticateToken(request, response, next) {
-  const authHeader = request.headers['authorization']
-  const token = authHeader && authHeader.split(' ')[1]
-  if (token === null) 
-    return response.status(401)
-                   .send('Cannot find header for authorization')
-  jwt.verify(token, process.env.SECRET, (error, user) => {
-    if (error) 
-      return response.status(403)
-                     .send('Cant verify JWT')
-    // chưa hiểu nha =)) 
-    request.user = user 
-    next()
-  })
-
-}
-
-loginRouter.get('/', authenticateToken, async (request, response) => {
-
 })
 
 module.exports = loginRouter

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import signupService from '../services/signup'
+import { connect } from 'react-redux'
+import { signup } from '../reducers/AuthReducer'
 
-export const Signup = () => {
+const Signup = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -11,22 +12,28 @@ export const Signup = () => {
 
     const handleSignUp = async (e) => {
         e.preventDefault();
-        try {
-            const user = await signupService.signup({
-              username, password, email, cohort
-            })
-            // này chưa có authorization đàng hoàng mà chạy tạm z trc
-            navigate('/profile');
-            setUsername('')
-            setPassword('')
-            setEmail('')
-            setCohort('')
-        } catch (exception) {
-        setErrorMessage('Invalid Signup')
-        setTimeout(() => {
-            setErrorMessage(null)
-        }, 5000)
-    }
+        navigate('/profile');
+        await props.signup({username: username, password: password, email: email, cohort: cohort})
+        setUsername('')
+        setPassword('')
+        setEmail('')
+        setCohort('')
+        // try {
+        //     const user = await signupService.signup({
+        //       username, password, email, cohort
+        //     })
+        //     // này chưa có authorization đàng hoàng mà chạy tạm z trc
+        //     navigate('/profile');
+        //     setUsername('')
+        //     setPassword('')
+        //     setEmail('')
+        //     setCohort('')
+        // } catch (exception) {
+        // setErrorMessage('Invalid Signup')
+        // setTimeout(() => {
+        //     setErrorMessage(null)
+        // }, 5000)
+        // }
     }
     
     let navigate = useNavigate(); 
@@ -82,3 +89,14 @@ export const Signup = () => {
     </div>
     )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  }
+}
+
+const mapDispatchToProps = { signup }
+
+const ConnectedSignup = connect(mapStateToProps, mapDispatchToProps)(Signup)
+export default ConnectedSignup

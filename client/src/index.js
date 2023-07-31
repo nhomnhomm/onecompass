@@ -6,11 +6,11 @@ import { Provider } from 'react-redux'
 
 import './styles/index.scss'
 import App from './App';
-import LoginReducer from './reducers/LoginReducer'
+import AuthReducer from './reducers/AuthReducer'
 
 const store = configureStore({
   reducer: {
-    login: LoginReducer
+    user: AuthReducer
   }
 })
 

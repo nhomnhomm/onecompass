@@ -1,7 +1,19 @@
+#root {
+    height: 100vh;
+    width: 100vw;
+}
+
 @import "../../node_modules/bootstrap/scss/functions"; 
 @import "../../node_modules/bootstrap/scss/variables";
 
 @import './overrides.scss';
+html, body, .row, .container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
 @import "../../node_modules/bootstrap/scss/mixins";
 

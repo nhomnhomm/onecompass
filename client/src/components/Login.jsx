@@ -1,30 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Navigate } from "react-router-dom";
-import userService from '../services/users'
-import loginService from '../services/login'
 
-export const Login = () => {
+import { connect } from 'react-redux'
+import { login } from '../reducers/AuthReducer'
+
+const Login = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [user, setUser] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null)
 
-  // see user list in console.log
-  useEffect(() => {
-    userService
-    .getAll()
-    .then(response => {
-      console.log(response)
-    })
-  }, [])
-
   let navigate = useNavigate(); 
-
-  useEffect(() => {
-    if (user) {
-      navigate('/profile')
-    }
-  }, [user])
 
   const signupLink = () =>{ 
     navigate('/signup');
@@ -36,23 +21,21 @@ export const Login = () => {
   const handleLogIn = async (e) => {
     e.preventDefault();
     console.log();
+    await props.login({username: username, password: password})
     //
-    try {
-      const user = await loginService.login({
-        username, password,
-      })
-      window.localStorage.setItem(
-        'loggedInUser', JSON.stringify(user)
-      ) 
-      setUser(user)
-      setUsername('')
-      setPassword('')
-      } catch (exception) {
-      setErrorMessage('Wrong credentials')
-      setTimeout(() => {
-        setErrorMessage(null)
-      }, 5000)
-    }
+    // try {
+    //   const user = await props.login({
+    //     username, password,
+    //   })
+    //   setUser(user)
+    //   setUsername('')
+    //   setPassword('')
+    //   } catch (exception) {
+    //   setErrorMessage('Wrong credentials')
+    //   setTimeout(() => {
+    //     setErrorMessage(null)
+    //   }, 5000)
+    // }
   }
 
   return (
@@ -93,3 +76,14 @@ export const Login = () => {
     </div>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user,
+  }
+}
+
+const mapDispatchToProps = { login }
+
+const ConnectedLogin = connect(mapStateToProps, mapDispatchToProps)(Login)
+export default ConnectedLogin
