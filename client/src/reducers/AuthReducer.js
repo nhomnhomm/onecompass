@@ -26,6 +26,7 @@ export const login = (content) => {
         username: content.username,
         password: content.password
       })
+      console.log('user' + user)
       window.localStorage.setItem('loggedUser', JSON.stringify(user))
       dispatch({
         type: 'SET_USER',

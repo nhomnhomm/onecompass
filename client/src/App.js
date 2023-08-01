@@ -12,6 +12,7 @@ import Login  from './components/Login';
 import { ForgotPassword } from './components/ForgotPassword'
 import Profile from './components/Profile'
 import { MajorMinor } from './components/MajorMinor';
+import Exploratory from './components/Exploratory'
 
 const App = (props) => {
   useEffect(() => {
@@ -46,6 +47,7 @@ const App = (props) => {
           <Routes>
             <Route exact path="/" Component={Profile} />
             <Route exact path="/profile" Component={Profile} />
+            <Route exact path="/exploratory" Component={Exploratory} />
             <Route exact path="/majorminor" Component={MajorMinor} />
           </Routes>
       </Router>
