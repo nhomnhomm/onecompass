@@ -1,0 +1,37 @@
+[
+  {"category": "E1", "semester": "Fall", "course": "Introduction to Visual Studies"}, 
+  {"category": "E1", "semester": "Fall", "course": "Introduction to Art History and Theory"}, 
+  {"category": "E1", "semester": "Fall", "course": "Introduction to Film History and Theory"}, 
+  {"category": "E1", "semester": "Fall", "course": "Video and Film Production"}, 
+  {"category": "E1", "semester": "Spring", "course": "Dance and Performance Production"}, 
+  {"category": "E1", "semester": "Spring", "course": "2D/3D Foundations"}, 
+  {"category": "E1", "semester": "Spring", "course": "Issues in Contemporary Photography"}, 
+  {"category": "E1", "semester": "Spring", "course": "Arts of Southeast Asia"}, 
+
+  {"category": "E2", "semester": "Fall", "course": "Research Methods and Statistics"}, 
+  {"category": "E2", "semester": "Fall", "course": "Ethnographic Research Method"}, 
+  {"category": "E2", "semester": "Fall", "course": "Ethics and Moral Philosophy"}, 
+  {"category": "E2", "semester": "Fall", "course": "History of International Relations Theory"}, 
+  {"category": "E2", "semester": "Spring", "course": "Global Lab History"}, 
+  {"category": "E2", "semester": "Spring", "course": "Foundations of Political Economy"}, 
+  {"category": "E2", "semester": "Spring", "course": "Disability and Culture"}, 
+  {"category": "E2", "semester": "Spring", "course": "Youth and Society in Asia"}, 
+
+  {"category": "E3", "semester": "Fall", "course": "Computer Modeling and Simulation"}, 
+  {"category": "E3", "semester": "Fall", "course": "Engineering Exploration: Sink or Swim"}, 
+  {"category": "E3", "semester": "Fall", "course": "Electronic Devices and Circuits"}, 
+  {"category": "E3", "semester": "Fall", "course": "Signals, Systems and Control"}, 
+  {"category": "E3", "semester": "Spring", "course": "Mechanical Design"}, 
+  {"category": "E3", "semester": "Spring", "course": "Introductory Biology"}, 
+  {"category": "E3", "semester": "Spring", "course": "Environmental Sciences"}, 
+  {"category": "E3", "semester": "Spring", "course": "Organic Chemistry"}, 
+
+  {"category": "E4", "semester": "Fall", "course": "Linear Algebra"}, 
+  {"category": "E4", "semester": "Fall", "course": "Calculus"}, 
+  {"category": "E4", "semester": "Fall", "course": "Introduction to Data analysis"}, 
+  {"category": "E4", "semester": "Fall", "course": "Computer Science 1"}, 
+  {"category": "E4", "semester": "Spring", "course": "Multivariable Calculus"}, 
+  {"category": "E4", "semester": "Spring", "course": "Probability"}, 
+  {"category": "E4", "semester": "Spring", "course": "Computer Science 2"}, 
+  {"category": "E4", "semester": "Spring", "course": "Software Engineering"}
+]
