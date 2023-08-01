@@ -46,6 +46,7 @@ const App = (props) => {
           <Routes>
             <Route exact path="/" Component={Profile} />
             <Route exact path="/profile" Component={Profile} />
+            <Route exact path="/majorminor" Component={MajorMinor} />
           </Routes>
       </Router>
     </div>
