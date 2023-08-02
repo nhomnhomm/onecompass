@@ -21,6 +21,7 @@ const NavBar = () => {
             <Nav.Link href="/upcomingterm" style = {linkStyle}>Upcoming Term</Nav.Link>
             <Nav.Link href="/roadmap" style = {linkStyle}>Roadmap</Nav.Link>
             <Nav.Link href="/gpa" style = {linkStyle}>GPA & Credits</Nav.Link>
+            <Nav.Link href="/aboutus" style = {linkStyle}>About us</Nav.Link>
             <Nav.Link href="/profile" style = {linkStyle}>Profile</Nav.Link>
           </Nav>
         </Navbar.Collapse>
