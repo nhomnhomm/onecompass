@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from "react-router-dom"
 
 // import verificationCodeService 
 
@@ -20,6 +21,7 @@ export const ForgotPassword = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}/>
           <button className="row btn-primary mt-4 mx-auto">Send</button>   
+        <Link to='/' className='text-decoration-none text-secondary'> Return to LogIn </Link>
         </div>
       </form>    
     </div>
