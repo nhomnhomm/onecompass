@@ -32,7 +32,6 @@ const App = (props) => {
             <Route exact path="/" Component={Login} />
             <Route exact path="/forgotpassword" Component={ForgotPassword} />
             <Route exact path="/signup" Component={Signup} />
-            <Route exact path="/profile" Component={Profile} />
           </Routes>
       </Router>
       )
