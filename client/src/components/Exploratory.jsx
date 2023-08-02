@@ -2,8 +2,8 @@ import React, { useMemo } from 'react'
 import { Link } from "react-router-dom"
 import { useTable, useRowSelect } from 'react-table'
 import ExploratoryCourse from '../assets/exploratoryCourses.json'
-import { COLUMNS } from './columns'
-import { Checkbox } from './Checkbox'
+import { COLUMNS } from './Table/columns'
+import { Checkbox } from './Table/Checkbox'
 import '../App.scss';
 
 import {inspect} from "util";
