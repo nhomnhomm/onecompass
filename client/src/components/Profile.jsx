@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import userService from '../services/users';
-import { Dropdown, Navbar, Nav } from "react-bootstrap";
 import "../App.scss";
 import { redirect } from 'react-router-dom';
 
@@ -24,10 +23,10 @@ const Profile = (props) => {
   console.log(showDeleteAccountModal)
 
   const handleLogout = () => {
+    redirect('/'); // Redirect to the main page
     props.logout(); // Dispatch the logout action (assuming this clears the authentication state)
     userService.destroyToken(); // Destroy the token
     window.localStorage.removeItem('loggedUser'); // Remove user from localStorage
-    redirect('/'); // Redirect to the main page
   };
 
   const handleResetPassword = () => {
@@ -66,8 +65,8 @@ const Profile = (props) => {
           {showLogoutModal && (
             <div className="modal">
               <p>Are you sure you want to log out?</p>
-              <button onClick={handleLogout}>Yes</button>
-              <button onClick={() => setShowLogoutModal(false)}>Cancel</button>
+              <button className='btn-primary' onClick={handleLogout}>Yes</button>
+              <button className='btn-primary' onClick={() => setShowLogoutModal(false)}>Cancel</button>
             </div>
           )}
           {showResetPasswordModal && (
@@ -76,20 +75,15 @@ const Profile = (props) => {
               {/* Buttons for resetting password */}
             </div>
           )}
-                {showDeleteAccountModal && (
+          {showDeleteAccountModal && (
           <div className="modal"  role="dialog">
             <p>Are you sure you want to delete your account?</p>
-            <button onClick={handleDeleteAccount}>Yes</button>
-            <button onClick={() => setShowDeleteAccountModal(false)}>Cancel</button>
+            <button className='btn-primary' onClick={handleDeleteAccount}>Yes</button>
+            <button className='btn-primary' onClick={() => setShowDeleteAccountModal(false)}>Cancel</button>
           </div>
           )}
-
-      
-
         </div>
-  
       </div>
- 
     </div>
   ); 
 };

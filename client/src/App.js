@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navigate, BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.scss';
 
 import userService from './services/users'
@@ -31,6 +31,8 @@ const App = (props) => {
       return (
         <Router>
           <Routes>
+            {/* Could improve by creating a page to announce the unauthenticated path */}
+            <Route path={"*"} element={ <Navigate replace to={ "/" }/> }/>
             <Route exact path="/" Component={Login} />
             <Route exact path="/forgotpassword" Component={ForgotPassword} />
             <Route exact path="/signup" Component={Signup} />

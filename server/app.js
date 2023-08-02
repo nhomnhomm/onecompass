@@ -48,5 +48,7 @@ app.use('/api/users', usersRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
+// for deployment 
+app.use(express.static('build'))
 
 module.exports = app
