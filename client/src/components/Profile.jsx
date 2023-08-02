@@ -104,4 +104,4 @@ const mapDispatchToProps = { logout }
 
 const ConnectedProfile = connect(mapStateToProps, mapDispatchToProps)(Profile)
 
-export default Profile;
+export default ConnectedProfile;
