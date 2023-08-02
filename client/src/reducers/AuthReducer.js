@@ -14,7 +14,7 @@ export const setUser = (content) => {
   return async dispatch => {
     dispatch({
       type: 'SET_USER',
-      data: { username: content.username, token: content.token }
+      data: { username: content.username, token: content.token, cohort: content.cohort }
     })
   }
 }
@@ -26,14 +26,14 @@ export const login = (content) => {
         username: content.username,
         password: content.password
       })
-      console.log('user' + user)
+      console.log('user' + JSON.stringify(user))
       window.localStorage.setItem('loggedUser', JSON.stringify(user))
       dispatch({
         type: 'SET_USER',
         data: user
       })
     } catch (exception) {
-      return exception
+      throw new Error('Invalid username or password')
     }
   }
 }

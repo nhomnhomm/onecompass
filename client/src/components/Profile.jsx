@@ -9,11 +9,12 @@ import { logout } from '../reducers/AuthReducer'
 
 const Profile = (props) => {
   // Simulated user data
+  console.log(props.user)
   const userData = {
-    pictureUrl: 'path/to/picture.jpg',
-    username: 'uyentulinhfuv',
-    major: 'Computer Science',
-    cohort: '2025',
+    pictureUrl: 'src/assets/profile.jpg', // not working
+    username: props.user.username,
+    major: 'Undecided', // static
+    cohort: props.user.cohort, 
   };
 
   // State for modals (logout, reset password, delete account)

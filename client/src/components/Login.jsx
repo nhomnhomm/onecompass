@@ -4,6 +4,9 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { connect } from 'react-redux'
 import { login } from '../reducers/AuthReducer'
 
+import {inspect} from "util";
+
+
 const Login = (props) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +24,13 @@ const Login = (props) => {
   const handleLogIn = async (e) => {
     e.preventDefault();
     console.log();
-    await props.login({username: username, password: password})
+    await props.login({username: username, password: password}).catch(error => {
+      setErrorMessage('' + error)
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000)
+    })
+    // redirect('/profile')
     //
     // try {
     //   const user = await props.login({

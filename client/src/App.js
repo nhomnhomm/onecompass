@@ -15,6 +15,9 @@ import Profile from './components/Profile'
 import { MajorMinor } from './components/MajorMinor';
 import Exploratory from './components/Exploratory'
 import Course from './components/Course';
+import UpcomingTerm from './components/UpcomingTerm';
+import RoadMap from './components/RoadMap'
+import GPA from './components/GPA&Credits'
 
 const App = (props) => {
   useEffect(() => {
@@ -32,7 +35,7 @@ const App = (props) => {
         <Router>
           <Routes>
             {/* Could improve by creating a page to announce the unauthenticated path */}
-            <Route path={"*"} element={ <Navigate replace to={ "/" }/> }/>
+            {/* <Route path={"*"} element={ <Navigate replace to={ "/" }/> }/> */}
             <Route exact path="/" Component={Login} />
             <Route exact path="/forgotpassword" Component={ForgotPassword} />
             <Route exact path="/signup" Component={Signup} />
@@ -50,11 +53,15 @@ const App = (props) => {
       <Router>
           <NavBar/>
           <Routes>
+            {/* <Route path={"*"} element={ <Navigate replace to={ "/" }/> }/> */}
             <Route path="/courses/:id" Component={Course}/>
             <Route exact path="/" Component={Profile} />
             <Route exact path="/profile" Component={Profile} />
             <Route exact path="/exploratory" Component={Exploratory} />
             <Route exact path="/majorminor" Component={MajorMinor} />
+            <Route exact path="/upcomingterm" Component={UpcomingTerm} />
+            <Route exact path="/roadmap" Component={RoadMap} />
+            <Route exact path="/gpa" Component={GPA} />
           </Routes>
       </Router>
     </div>
