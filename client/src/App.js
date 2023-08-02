@@ -15,6 +15,7 @@ import Profile from './components/Profile'
 import { MajorMinor } from './components/MajorMinor';
 import Exploratory from './components/Exploratory'
 import Course from './components/Course';
+import AboutUs from './components/AboutUs';
 
 const App = (props) => {
   useEffect(() => {
@@ -53,6 +54,7 @@ const App = (props) => {
             <Route exact path="/profile" Component={Profile} />
             <Route exact path="/exploratory" Component={Exploratory} />
             <Route exact path="/majorminor" Component={MajorMinor} />
+            <Route exact path="/aboutus" Component={AboutUs} />
           </Routes>
       </Router>
     </div>
