@@ -142,33 +142,14 @@ export const MajorMinor = () => {
   };
 
   const containerStyle = {
-    paddingTop: "230px", // Set the top padding to make space for the fixed navbar
-    height: "150vh", // Set the container height to 100% of the viewport
+    paddingTop: "50px", // Set the top padding to make space for the fixed navbar
+    height: "100vh", // Set the container height to 100% of the viewport
     overflowY: "auto", // Allow the content to scroll vertically when it overflows
   };
 
   return (
-    <div className="container-fluid mt-5" style={containerStyle}>
-      <div className="navbar fixed-top navbar-expand-lg navbar-light bg-black">
-          <p className="webName text-center" style={{
-          position:'relative',
-          fontSize:22, 
-          color:"white", 
-          marginLeft: '45px',
-          marginTop: '25px'}}>ONECOMPASS</p>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto" style = {{marginRight: "40px"}}>
-              <Nav.Link href="/majorminor" style = {linkStyle}>Major/Minor</Nav.Link>
-              <Nav.Link href="/exploratory" style = {linkStyle}>Exploratory</Nav.Link>
-              <Nav.Link href="/upcomingterm" style = {linkStyle}>Upcoming Term</Nav.Link>
-              <Nav.Link href="/roadmap" style = {linkStyle}>Roadmap</Nav.Link>
-              <Nav.Link href="/gpa" style = {linkStyle}>GPA & Credits</Nav.Link>
-              <Nav.Link href="/profile" style = {linkStyle}>Profile</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-      </div>
-
-      <div style={{ marginTop: "250px" }}>
+    <div className="container-fluid" style={containerStyle}>
+      <div className="h-100" style={{ marginTop: "50px" }}>
         <div className="d-flex justify-content-center">
           <div className="col">
             <div className="dropdown-title text-center" style={titleStyle}>
@@ -193,7 +174,7 @@ export const MajorMinor = () => {
                 )}
             {selectedMajor && majors.find((major) => major.name === selectedMajor) && (
                   <React.Fragment>
-                    <div className="row justify-content-center mt-3">
+                    <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Foundation</h5>
                       </div>
@@ -207,7 +188,7 @@ export const MajorMinor = () => {
                       </div>
                     </div>
           
-                    <div className="row justify-content-center mt-3">
+                    <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Intermediate</h5>
                       </div>
@@ -221,7 +202,7 @@ export const MajorMinor = () => {
                       </div>
                     </div>
 
-                    <div className="row justify-content-center mt-3">
+                    <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Advanced</h5>
                       </div>
@@ -235,7 +216,7 @@ export const MajorMinor = () => {
                       </div>
                     </div>
 
-                    <div className="row justify-content-center mt-3">
+                    <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Capstone</h5>
                       </div>
@@ -275,7 +256,7 @@ export const MajorMinor = () => {
                 )}
             {selectedMinor && minors.find((minor) => minor.name === selectedMinor) && (
                 <React.Fragment>
-                  <div className="row justify-content-center mt-3">
+                  <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Foundation</h5>
                       </div>
@@ -289,7 +270,7 @@ export const MajorMinor = () => {
                       </div>
                     </div>
           
-                    <div className="row justify-content-center mt-3">
+                    <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Intermediate</h5>
                       </div>
@@ -303,7 +284,7 @@ export const MajorMinor = () => {
                       </div>
                     </div>
 
-                    <div className="row justify-content-center mt-3">
+                    <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Advanced</h5>
                       </div>
@@ -317,7 +298,7 @@ export const MajorMinor = () => {
                       </div>
                     </div>
 
-                    <div className="row justify-content-center mt-3">
+                    <div style={{height: "auto"}} className="row justify-content-center mt-3">
                       <div className='col'>
                         <h5 style={levelStyle}>Capstone</h5>
                       </div>
