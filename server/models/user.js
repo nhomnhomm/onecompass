@@ -10,6 +10,15 @@ const UserSchema = new mongoose.Schema({
   passwordHash: {
     type: String, 
     required: true
+  }, 
+  email: {
+    type: String, 
+    unique: true,
+    required: true
+  }, 
+  cohort: {
+    type: String, 
+    required: true
   }
 })
 

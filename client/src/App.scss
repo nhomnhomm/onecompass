@@ -4,8 +4,9 @@
     align-items: center;
     justify-content: center;
     background-color: white;
-    height: 45vh;
-    // padding: 40px
+    height: 100vh;
+    width: 100vw;
+    padding: 40px
 }
 
 .signup-container {
@@ -90,4 +91,8 @@ input::placeholder {
   
 .row {
     justify-content: space-between;
+}
+
+th thead .thead-dark {
+    background-color: #000 !important
 }
