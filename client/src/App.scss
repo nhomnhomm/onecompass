@@ -93,7 +93,6 @@ input::placeholder {
     justify-content: space-between;
 }
 
-
 .profile-container {
   /* Define styles for the profile container */
   display: flex;
@@ -162,3 +161,7 @@ input::placeholder {
     }
   }
 
+
+th thead .thead-dark {
+    background-color: #000 !important
+}

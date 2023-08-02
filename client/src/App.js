@@ -10,9 +10,11 @@ import { setUser } from './reducers/AuthReducer'
 import Signup from './components/Signup';
 import Login  from './components/Login';
 import { ForgotPassword } from './components/ForgotPassword'
+import NavBar from './components/NavBar'
 import Profile from './components/Profile'
 import { MajorMinor } from './components/MajorMinor';
 import Exploratory from './components/Exploratory'
+import Course from './components/Course';
 
 const App = (props) => {
   useEffect(() => {
@@ -44,7 +46,9 @@ const App = (props) => {
         <Link to="/">Login</Link>
       </nav> */}
       <Router>
+          <NavBar/>
           <Routes>
+            <Route path="/courses/:id" Component={Course}/>
             <Route exact path="/" Component={Profile} />
             <Route exact path="/profile" Component={Profile} />
             <Route exact path="/exploratory" Component={Exploratory} />

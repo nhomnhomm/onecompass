@@ -7,13 +7,16 @@ export const COLUMNS = [
   },
   {
     Header: 'Semester',
-    accessor: 'semester', // này chỉnh
+    accessor: 'semester', 
     sticky: 'left'
   },
   {
     Header: 'Courses',
     accessor: 'course',
-    sticky: 'left'
+    sticky: 'left', 
+  }, 
+  {
+    accessor: 'courseID',
   }
 ]
 

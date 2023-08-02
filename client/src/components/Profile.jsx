@@ -89,7 +89,7 @@ const Profile = (props) => {
         </div>
   
       </div>
-  
+ 
     </div>
   ); 
 };
