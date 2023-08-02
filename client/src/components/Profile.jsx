@@ -11,7 +11,7 @@ export const Profile = (props) => {
     redirect("/")
   }
   return (
-    <div>
+    <div style={{ marginTop: "100px" }}>
       <button onClick={handleLogout}>Log Out</button>
     </div>
   )

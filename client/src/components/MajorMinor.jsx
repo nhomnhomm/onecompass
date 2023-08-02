@@ -38,31 +38,8 @@ export const MajorMinor = () => {
       color: 'var(--bs-secondary)',
     };
 
-    const linkStyle = {
-      color:'white',
-      fontWeight:'500',
-    }
-
     return (
       <div className="container">
-        <div className="navbar fixed-top navbar-expand-lg navbar-light bg-black">
-          <p className="webName text-center" style={{
-            position:'relative',
-            fontSize:22, 
-            color:"white", 
-            marginLeft: '45px',
-            marginTop: '25px'}}>ONECOMPASS</p>
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ml-auto" style = {{marginRight: "40px"}}>
-                <Nav.Link href="#" style = {linkStyle}>Major/Minor</Nav.Link>
-                <Nav.Link href="#" style = {linkStyle}>Exploratory</Nav.Link>
-                <Nav.Link href="#" style = {linkStyle}>Upcoming Term</Nav.Link>
-                <Nav.Link href="#" style = {linkStyle}>Roadmap</Nav.Link>
-                <Nav.Link href="#" style = {linkStyle}>GPA & Credits</Nav.Link>
-                <Nav.Link href="./components/Profile.jsx" style = {linkStyle}>Profile</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-        </div>
         <div style={{ marginTop: "100px" }}>
           <div className="d-flex justify-content-center">
             <div className="col">
