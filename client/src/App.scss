@@ -92,3 +92,7 @@ input::placeholder {
 .row {
     justify-content: space-between;
 }
+
+th thead .thead-dark {
+    background-color: #000 !important
+}

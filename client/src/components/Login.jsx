@@ -49,12 +49,12 @@ const Login = (props) => {
         Say goodbye to confusing course planning, join the adventure, and let OneCompass guide you to academic excellence!
         </div>
         <div className="col-4 justify-content-center align-self-center px-5">
-          <form onSubmit={handleLogIn}>
             <h2 className='text-center fw-bold text-secondary'>Log In</h2>
             <p className="text-center">New user?
               {/* <a href="./signup">Sign Up</a> */}
               <button className="text-secondary border-0" onClick = {signupLink} >Sign Up</button>
             </p>
+          <form onSubmit={handleLogIn}>
             <div className="col">
               <label className="row fs-4">Username</label>
               <input className="row w-100"

@@ -1,8 +1,12 @@
 import React, { useMemo } from 'react'
+import { Link } from "react-router-dom"
 import { useTable, useRowSelect } from 'react-table'
 import ExploratoryCourse from '../assets/exploratoryCourses.json'
 import { COLUMNS } from './columns'
 import { Checkbox } from './Checkbox'
+import '../App.scss';
+
+import {inspect} from "util";
 
 const Exploratory = () => {
   const columns = useMemo(() => COLUMNS, [])
@@ -23,7 +27,7 @@ const Exploratory = () => {
     useRowSelect,
     hooks => {
       hooks.visibleColumns.push(columns => [
-        ...columns,
+        ...columns.slice(0,3),
         {
           id: 'selection',
           Header: 'Choose',
@@ -65,16 +69,17 @@ const Exploratory = () => {
     }
   )
 
+  console.log(data.map(row => row.course.id))
   let E1, E2, E3, E4 = false;
 
   return (
     <>
-      <table className='table d-block w-100 h-100 overflow-auto' {...getTableProps()}>
+      <table style={{ marginTop: "100px" }} className='full-height table d-block w-100 overflow-auto' {...getTableProps()}>
         <thead className='thead-dark sticky-top w-100'>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th width='20%' className='text-center' {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <th width='20%' className='bg-black text-center' {...column.getHeaderProps()}>{column.render('Header')}</th>
               ))}
             </tr>
           ))}
@@ -104,8 +109,20 @@ const Exploratory = () => {
                       return <td rowSpan='8' className='font-weight-bold align-middle text-center'>{cell.value}: Mathematics and Comuputing</td> 
                     }
                   }
+                  else if ({...cell.getCellProps()}.key.includes('course')) {
+                    return (
+                      <td className='align-middle text-center' {...cell.getCellProps()}>
+                      <Link to={`/courses/${row.original.courseID}`} className='text-decoration-none text-black'>{cell.render('Cell')}</Link>
+                      </td>
+                    )
+                  }
                   else {
-                    return <td className='align-middle text-center ' {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                    console.log(inspect(row.original.course.id)); // inspect circular json
+                    return (
+                      <td className='align-middle text-center' {...cell.getCellProps()}>
+                      {cell.render('Cell')}
+                      </td>
+                    )
                   }
                 })}
               </tr>
