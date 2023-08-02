@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import userService from '../services/users';
 import "../App.scss";
 import { redirect } from 'react-router-dom';
@@ -21,10 +22,10 @@ const Profile = (props) => {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showResetPasswordModal, setShowResetPasswordModal] = useState(false);
   const [showDeleteAccountModal, setShowDeleteAccountModal] = useState(false);
-  console.log(showDeleteAccountModal)
-
+  let navigate = useNavigate()
+  
   const handleLogout = () => {
-    redirect('/'); // Redirect to the main page
+    navigate('/'); // Redirect to the main page
     props.logout(); // Dispatch the logout action (assuming this clears the authentication state)
     userService.destroyToken(); // Destroy the token
     window.localStorage.removeItem('loggedUser'); // Remove user from localStorage
