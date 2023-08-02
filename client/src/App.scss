@@ -92,3 +92,73 @@ input::placeholder {
 .row {
     justify-content: space-between;
 }
+
+
+.profile-container {
+  /* Define styles for the profile container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .profile-picture {
+    /* Define styles for the profile picture */
+    max-width: 100px;
+    border-radius: 50%;
+  }
+
+  h2 {
+    /* Define styles for the username */
+    margin: 10px 0;
+  }
+
+  p {
+    /* Define styles for the major and cohort */
+    margin: 5px 0;
+  }
+}
+
+.profile-actions {
+  /* Define styles for the profile actions */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+
+  button {
+    /* Define styles for the action buttons */
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
+
+/* Define styles for the modals */
+.modal {
+    display:contents;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, 0);
+  background-color: navy;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  p {
+    margin-bottom: 10px;
+  };
+
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
